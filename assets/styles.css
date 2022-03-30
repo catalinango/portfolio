@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+
+/* ********** Custom Properties ********** */
+:root {
+  --first-color       : #61FAAD;
+  --first-alpha-color : rgba(97, 250, 173, 0.75);
+  --second-color      : #505393;
+  --second-alpha-color: rgba(80, 83, 147, 0.75);
+  --third-color       : #028090;
+  --third-alpha-color : rgba(2, 128, 144, 0.5);
+  --white-color       : #fff;
+  --gray-light-color  : #f3f3f3;
+  --gray-color        : #ccc;
+  --gray-dark-color   : #666;
+  --black-color       : #000;
+  --link-color        : var(--second-alpha-color);
+  --title-color       : #333;
+  --text-color        : #222;
+  --white-alpha-color : rgba(255, 255, 255, 0.5);
+  --black-alpha-color : rgba(0, 0, 0, 0.5);
+  --font              : 'Source Sans Pro', sans-serif;
+  --max-with          : 1200px;
+  --header-height     : 4rem;
+}
+
+/* ********** Reset ********** */
+html {
+  box-sizing     : border-box;
+  font-family    : var(--font);
+  font-size      : 16px;
+  scroll-behavior: smooth;
+  /* to allow transitions */
+}
+
+*,
+*::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin    : 0;
+  overflow-x: hidden;
+  color     : var(--text-color);
+}
+
+a {
+  color     : var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin   : 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin   : 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin   : 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin   : 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin   : 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin   : 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height   : auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ********** Components ********** */
+
+/* ********** Utilities ********** */
+
+/* ********** Site Styles ********** */
