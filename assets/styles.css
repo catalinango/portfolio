@@ -404,6 +404,10 @@ p {
   height: 1.5rem;
 }
 
+.margin-b1 {
+  margin-bottom: 1rem;
+}
+
 .small-caps {
   font-variant: small-caps slashed-zero;
 }
@@ -433,8 +437,9 @@ p {
 }
 
 .about-image {
-  display    : flex;
-  align-items: center;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
 }
 
 .box-shadow-1 {
@@ -448,6 +453,7 @@ p {
   display              : grid;
   grid-template-columns: repeat(2, 48%);
   justify-content      : space-between;
+  cursor               : pointer;
 }
 
 .contact-card {
