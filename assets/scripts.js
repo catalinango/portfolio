@@ -9,40 +9,41 @@
   $linkedin.addEventListener("click", () => {
     window.open("https://www.linkedin.com/in/catalinango/", "_blank")
   });
-})(document)
+})(document);
 
-  /* ********** ContactForm ********** */
-  ((d) => {
-    const $form = d.querySelector(".contact-form"),
-      $loader = d.querySelector(".contact-form-loader"),
-      $response = d.querySelector(".contact-form-response");
+/* ********** ContactForm ********** */
+((d) => {
+  const $form = d.querySelector(".contact-form"),
+    $loader = d.querySelector(".contact-form-loader"),
+    $response = d.querySelector(".contact-form-response");
 
-    $form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      $loader.classList.remove("none");
-      fetch("send-mail.php", {
-        method: "POST",
-        body: new FormData(e.target)
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    $loader.classList.remove("none");
+    fetch("./assets/send-mail.php", {
+      method: "POST",
+      body: new FormData(e.target)
+    })
+      .then((res) => res.text())
+      .then((json) => {
+        console.log(json);
+        location.hash = "#thanks";
+        $form.reset();
       })
-        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-        .then((json) => {
-          console.log(json);
-          location.hash = "#thanks";
-          $form.reset();
-        })
-        .catch((err) => {
-          console.log(err);
-          let message = err.statusText || "An error as occured, try again later";
-          $response.querySelector("h3").innerHTML = `Error ${err.status} : ${message}`;
-        })
-        .finally(() => {
-          $loader.classList.add("none");
-          setTimeout(() => {
-            location.hash = "#close"
-          }, 3000);
-        });
-    });
-  })(document);
+      .catch((err) => {
+        console.log(err);
+        let msg = err.statusText || "An error as occured, try again later";
+        $response.querySelector("h3").innerHTML = `Error ${err.status} : ${msg}`;
+      })
+      .finally(() => {
+        $loader.classList.add("none");
+        setTimeout(() => {
+          location.hash = "#close"
+        }, 3000);
+      });
+  });
+})(document);
+
 
 /* ********** Menu ********** */
 ((d) => {
