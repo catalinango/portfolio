@@ -1,3 +1,20 @@
+/* ********** Box ********** */
+((d) => {
+  const $mediaQuery = window.matchMedia('(max-width: 1024px)');
+
+  if ($mediaQuery.matches) {
+    const $proyects = d.querySelectorAll(".box");
+    $proyects.forEach(el => {
+      el.addEventListener("click", (e) => {
+        el.lastElementChild.classList.toggle("box-footer-hover");
+        el.firstElementChild.lastElementChild.classList.toggle("box-info-hover");
+        el.firstElementChild.classList.toggle("box-img-hover");
+        el.firstElementChild.firstElementChild.classList.toggle("box-img-img-hover");
+      });
+    });
+  }
+})(document);
+
 /* ********** ContactCards ********** */
 ((d) => {
   const $github = d.querySelector("#github"),
