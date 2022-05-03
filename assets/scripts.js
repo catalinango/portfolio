@@ -32,10 +32,32 @@
 ((d) => {
   const $form = d.querySelector(".contact-form"),
     $loader = d.querySelector(".contact-form-loader"),
-    $response = d.querySelector(".contact-form-response");
+    $response = d.querySelector(".contact-form-response"),
+    $inputs = d.querySelectorAll(".contact-form [required]");
+
+  $inputs.forEach(input => {
+    const $span = d.getElementById(input.name + '-error');
+    $span.classList.add("contact-form-error", "none");
+    $span.textContent = input.title;
+
+    input.addEventListener("keyup", (e) => {
+      if (e.target.matches(".contact-form [required]")) {
+        let $input = e.target,
+          pattern = $input.pattern || $input.dataset.pattern;
+
+        if (pattern && $input.value !== "") {
+          let regex = new RegExp(pattern);
+          return !regex.exec($input.value)
+            ? d.getElementById($input.name + "-error").classList.add("is-active")
+            : d.getElementById($input.name + "-error").classList.remove("is-active")
+        }
+      }
+    });
+  });
 
   $form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     $loader.classList.remove("none");
     fetch("./assets/send-mail.php", {
       method: "POST",

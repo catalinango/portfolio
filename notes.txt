@@ -1,0 +1,7 @@
+Whats App image 260x260
+LinkedIn image 552x368
+Facebook image 1200x630
+
+Formato óptimo: al menos 1200 x 630 pixeles en formato 1.91: 1 - Imagens grandes
+
+Mínimo: 200 x 200 pixeles - la imagen se muestra muy pequeña - no es recomendable.
