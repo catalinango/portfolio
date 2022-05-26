@@ -6,10 +6,11 @@
     const $proyects = d.querySelectorAll(".box");
     $proyects.forEach(el => {
       el.addEventListener("click", (e) => {
-        el.lastElementChild.classList.toggle("box-footer-hover");
-        el.firstElementChild.lastElementChild.classList.toggle("box-info-hover");
-        el.firstElementChild.classList.toggle("box-img-hover");
-        el.firstElementChild.firstElementChild.classList.toggle("box-img-img-hover");
+        el.getElementsByTagName('div')[0].classList.toggle("box-label-hover");
+        el.getElementsByTagName('div')[1].classList.toggle("box-img-hover");
+        el.getElementsByTagName('div')[1].firstElementChild.classList.toggle("box-img-img-hover");
+        el.getElementsByTagName('div')[1].lastElementChild.classList.toggle("box-info-hover");
+        el.lastElementChild.classList.toggle('box-footer-hover');
       });
     });
   }

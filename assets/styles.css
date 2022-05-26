@@ -173,6 +173,27 @@ p {
   object-fit: cover;
 }
 
+.box-label {
+  position       : absolute;
+  display        : flex;
+  left           : 0px;
+  top            : 0px;
+  width          : 400px;
+  height         : 400px;
+  text-align     : center;
+  padding        : 0.5rem 1rem 0.5rem 1rem;
+  justify-content: center;
+  align-items    : center;
+  z-index        : 200;
+}
+
+.box-label>svg {
+  width  : 10rem;
+  height : 10rem;
+  fill   : var(--third-color);
+  opacity: 0.8;
+}
+
 .box-footer-hover {
   z-index: 999;
   bottom : 1.2rem;
@@ -186,6 +207,11 @@ p {
 
 .box-img-img-hover {
   opacity: 0.3;
+}
+
+.box-label-hover {
+  z-index: 0;
+  opacity: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -203,6 +229,11 @@ p {
 
   .box:hover .box-img img {
     opacity: 0.3;
+  }
+
+  .box:hover .box-label {
+    z-index: 0;
+    opacity: 0;
   }
 }
 
@@ -791,6 +822,10 @@ h1 {
 
   .about>.section-title {
     grid-column: span 3;
+  }
+
+  .about * p {
+    line-height: 1.52rem;
   }
 
   .contact {
