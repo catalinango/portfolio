@@ -215,7 +215,6 @@ p {
 }
 
 @media screen and (min-width: 1024px) {
-
   .box:hover .box-footer {
     z-index: 999;
     bottom : 1.2rem;
@@ -732,7 +731,7 @@ h1 {
   align-items    : center;
 }
 
-.portfolio {
+.portfolio>.container {
   display        : flex;
   flex-direction : column;
   justify-content: center;
@@ -801,9 +800,13 @@ h1 {
     font-size: 3vw;
   }
 
-  .portfolio {
+  .portfolio>.container {
     display              : grid;
-    grid-template-columns: repat(2, 50%);
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .portfolio .item {
+    display: none;
   }
 
   .portfolio .section-title {
@@ -813,6 +816,8 @@ h1 {
 
 @media screen and (min-width: 1024px) {
   .about {
+    padding-left         : 0%;
+    padding-right        : 0%;
     height               : calc(100vh - (var(--header-height)));
     display              : grid;
     grid-template-columns: repeat(3, 30%);
@@ -835,6 +840,8 @@ h1 {
   }
 
   .contact>.container {
+    padding-left         : 0%;
+    padding-right        : 0%;
     width                : 100%;
     display              : grid;
     grid-template-columns: repeat(3, 30%);
@@ -906,11 +913,19 @@ h1 {
     font-size: 2.5vw;
   }
 
-  .portfolio {
-    grid-template-columns: repat(3, 1fr);
+  .portfolio>.container {
+    width                : 100%;
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .portfolio .item {
+    display   : flex;
+    min-width : 200px;
+    align-self: stretch;
   }
 
   .portfolio .section-title {
-    grid-column: span 3;
+    grid-column: span 4;
   }
+
 }
